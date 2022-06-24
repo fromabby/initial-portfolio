@@ -1,28 +1,67 @@
 import './index.scss'
+import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faReact, faNodeJs, faHtml5, faJsSquare, faGitAlt, faCss3 } from '@fortawesome/free-brands-svg-icons'
+
 import AnimatedLetters from '../AnimatedLetters'
+import Loader from 'react-loaders'
 
 const About = () => {
+    const [letterClass, setLetterClass] = useState('text-animate')
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setLetterClass('text-animate-hover')
+        }, 3000)
+        return () => clearInterval(timeout)
+    }, [])
+
     return (
-        <div className="container about-page">
-            <div className="text-zone">
-                <h1>
-                    <AnimatedLetters
-                        letterClass={'text-animate'}
-                        strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
-                        idx={15}
-                    />
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras felis ligula, gravida a viverra eget, vestibulum et libero. Quisque euismod efficitur erat, ornare ornare orci fermentum at. Nam et ex nec turpis ultrices sagittis. Donec eget quam at massa euismod mattis in non eros. Nam libero metus, condimentum eget lectus luctus, bibendum dictum arcu. In rutrum imperdiet tristique. Ut dignissim commodo posuere. Proin mauris ante, consequat a nibh et, facilisis auctor velit. Curabitur quis massa rhoncus, sollicitudin ante nec, condimentum odio. Pellentesque sed mauris eu leo feugiat rhoncus. Curabitur et iaculis nunc. Vestibulum non vestibulum sapien, in pharetra odio. Curabitur gravida nunc id sem vulputate mattis. Maecenas vitae orci id orci convallis mattis quis nec erat. Sed massa metus, dignissim ac cursus eget, mollis tincidunt lorem.
-                </p>
-                <p>
-                    Sed eu urna lectus. Ut efficitur justo quis consectetur euismod. Sed pulvinar ac lacus a accumsan. Etiam cursus pharetra elit non sollicitudin. Vestibulum lobortis, elit vitae pharetra vestibulum, ante eros dapibus tortor, ut viverra tortor ligula id leo. Integer a lectus hendrerit, lacinia dolor ut, congue lorem. Suspendisse rhoncus, sem ut sodales luctus, felis orci accumsan erat, id gravida sapien felis nec lorem.
-                </p>
-                <p>
-                    Sed eu urna lectus. Ut efficitur justo quis consectetur euismod. Sed pulvinar ac lacus a accumsan. Etiam cursus pharetra elit non sollicitudin. Vestibulum lobortis, elit vitae pharetra vestibulum, ante eros dapibus tortor, ut viverra tortor ligula id leo. Integer a lectus hendrerit, lacinia dolor ut, congue lorem. Suspendisse rhoncus, sem ut sodales luctus, felis orci accumsan erat, id gravida sapien felis nec lorem.
-                </p>
+        <>
+            <div className="container about-page">
+                <div className="text-zone">
+                    <h1>
+                        <AnimatedLetters
+                            letterClass={letterClass}
+                            strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
+                            idx={15}
+                        />
+                    </h1>
+                    <p>
+                        A Thomasian graduate of BS in Information Technology. I developed full-stack projects using frameworks like ReactJS and NextJS for the frontend, and NodeJS with Express for the backend. Experienced in using MongoDB with Mongoose and Prisma.
+                    </p>
+                    <p>
+                        Paragraph 2
+                    </p>
+                    <p>
+                        Paragraph 3
+                    </p>
+                </div>
+                <div className="stage-cube-cont">
+                    <div className="cubespinner">
+                        <div className="face1">
+                            <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
+                        </div>
+                        <div className="face2">
+                            <FontAwesomeIcon icon={faNodeJs} color="#3c873a" />
+                        </div>
+                        <div className="face3">
+                            <FontAwesomeIcon icon={faHtml5} color="#F06529" />
+                        </div>
+                        <div className="face4">
+                            <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
+                        </div>
+                        <div className="face5">
+                            <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
+                        </div>
+                        <div className="face6">
+                            <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            <Loader type="pacman" />
+        </>
     )
 }
 

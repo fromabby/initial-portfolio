@@ -29,7 +29,7 @@ const Sidebar = () => {
                     <a
                         target="_blank"
                         rel="noreferrer"
-                        href="linkedin.com/in/abbonuan"
+                        href="https://linkedin.com/in/abbonuan"
                     >
                         <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
                     </a>
@@ -39,7 +39,7 @@ const Sidebar = () => {
                     <a
                         target="_blank"
                         rel="noreferrer"
-                        href="linkedin.com/in/abbonuan"
+                        href="https://github.com/fromabby"
                     >
                         <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
                     </a>
